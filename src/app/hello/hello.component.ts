@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PEOPLE, Person } from '../person/person';
 
 @Component({
   selector: 'app-hello',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloComponent implements OnInit {
 
-  greeting: string;
+  personName: Person;
+  people = PEOPLE;
 
   constructor() {
   }
@@ -15,8 +17,7 @@ export class HelloComponent implements OnInit {
   ngOnInit() {
   }
 
-  log(e) {
-    console.log(e);
+  addPerson(personName) {
+    this.people.push({name: personName});
   }
-
 }
